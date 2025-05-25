@@ -1,165 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zawaad Khan Portfolio</title>
-<style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    display: flex;
-    min-height: 100vh;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zawaad Khan</title>
 
-  /* Container */
-  .container {
-    display: flex;
-    margin: auto;
-    max-width: 900px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
-    overflow: hidden;
-    width: 100%;
-  }
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
-  /* Sidebar */
-  .sidebar {
-    background: #f0f0f0;
-    width: 280px;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
+  <style>
+    :root {
+      --card-bg: rgba(255, 255, 255, 0.6);
+      --card-blur: blur(12px);
+      --radius: 20px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --fg: #111;
+      --link-bg: rgba(255, 255, 255, 0.8);
+    }
 
-  .avatar {
-    width: 120px;
-    height: 120px;
-    background: #bbb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    color: #fff;
-    user-select: none;
-  }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .tagline {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
-    font-style: italic;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: #ddd;
-    color: #555;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .social-links a:hover {
-    background: #555;
-    color: #fff;
-  }
-
-  /* Main content */
-  .main-content {
-    flex-grow: 1;
-    padding: 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 700px) {
     body {
-      flex-direction: column;
-      padding: 1rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: var(--fg);
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
     }
-    .container {
-      flex-direction: column;
-      max-width: 100%;
-      border-radius: 12px;
-    }
-    .sidebar {
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: var(--card-blur);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 900px;
       width: 100%;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 1rem;
+      overflow: hidden;
     }
-    .main-content {
-      padding: 1.5rem;
+
+    .card-header {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
     }
-  }
-</style>
+
+    .card-header .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 0 auto 1.5rem;
+      /* replace with:
+         <img class="avatar" src="your-photo.jpg" alt="Zawaad Khan"> */
+    }
+
+    .card-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-header p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    /* ─── Connect Buttons (horizontal) ─── */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1rem 2rem 2.5rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      background: var(--link-bg);
+      padding: 0.8rem 1.2rem;
+      border-radius: 14px;
+      font-weight: 500;
+      color: var(--fg);
+      transition: 0.3s ease;
+    }
+
+    .links a:hover {
+      background: var(--fg);
+      color: #fff;
+    }
+
+    .links i {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* ─── Writing Section ─── */
+    .writing {
+      padding: 2rem;
+    }
+
+    .writing h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* Substack embed tweaks */
+    #substack-feed-embed .sfw-grid {
+      gap: 1rem;
+    }
+    #substack-feed-embed .sfw-item {
+      background: rgba(255,255,255,0.8) !important;
+      backdrop-filter: blur(8px) !important;
+      border-radius: 18px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="card">
+    <!-- Header -->
+    <div class="card-header">
+      <div class="avatar"></div>
+      <h1>Zawaad Khan</h1>
+      <p>Building intelligent systems for global markets</p>
+    </div>
 
-<div class="container">
-  <aside class="sidebar">
-    <div class="avatar" aria-label="User avatar">👤</div>
-    <div class="name">Zawaad Khan</div>
-    <div class="tagline">Writer & Thinker</div>
-    <nav class="social-links" aria-label="Social media links">
-      <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
-      <a href="#" title="Substack" aria-label="Substack">S</a>
-      <a href="#" title="GitHub" aria-label="GitHub">GH</a>
-    </nav>
-  </aside>
+    <!-- Four horizontal connect buttons -->
+    <div class="links">
+      <a href="https://www.linkedin.com/in/zawaadkhan/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        Connect on LinkedIn
+      </a>
+      <a href="https://github.com/Zawaad-Khan" target="_blank">
+        <i class="fab fa-github"></i>
+        Code & Data Projects
+      </a>
+      <a href="https://www.instagram.com/yourhandle/" target="_blank">
+        <i class="fab fa-instagram"></i>
+        Visual Diary
+      </a>
+      <a href="https://www.facebook.com/yourprofile" target="_blank">
+        <i class="fab fa-facebook"></i>
+        Personal Feed
+      </a>
+    </div>
 
-  <main class="main-content">
-    <div class="section-title">Substack Articles</div>
-    <div id="substack-feed-embed"></div>
+    <!-- Writing (Substack embed) -->
+    <div class="writing">
+      <h2>Read my Writings on Substack</h2>
+      <div id="substack-feed-embed"></div>
+    </div>
+  </div>
 
-    <script>
-      window.SubstackFeedWidget = {
-        substackUrl: "zawaadkhan.substack.com",
-        posts: 3,
-        layout: "right"
-      };
-    </script>
-    <script src="https://substackapi.com/embeds/feed.js" async></script>
-  </main>
-</div>
-
+  <!-- Substack Feed Script -->
+  <script>
+    window.SubstackFeedWidget = {
+      substackUrl: "zawaadkhan.substack.com",
+      posts: 4,
+      layout: "grid"
+    };
+  </script>
+  <script src="https://substackapi.com/embeds/feed.js" async></script>
 </body>
 </html>
