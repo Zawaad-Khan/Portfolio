@@ -13,12 +13,16 @@
 
   <style>
     :root {
-      --card-bg: rgba(255, 255, 255, 0.6);
+      /* dark stained-glass tints */
+      --card-bg: rgba(20, 20, 20, 0.6);
+      --link-bg: rgba(20, 20, 20, 0.8);
       --card-blur: blur(12px);
+      --link-blur: blur(8px);
+
+      /* lighter text on dark panels */
+      --fg: #f0f0f0;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
       --radius: 20px;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --fg: #111;
-      --link-bg: rgba(255, 255, 255, 0.8);
     }
 
     *, *::before, *::after {
@@ -58,20 +62,22 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: #ccc;
+      background: #555;
       margin: 0 auto 1.5rem;
-      /* replace with:
+      /* replace with your photo:
          <img class="avatar" src="your-photo.jpg" alt="Zawaad Khan"> */
     }
 
     .card-header h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
+      color: var(--fg);
     }
 
     .card-header p {
       font-size: 1.1rem;
       opacity: 0.8;
+      color: var(--fg);
     }
 
     /* ─── Connect Buttons (horizontal) ─── */
@@ -89,6 +95,7 @@
       gap: 0.5rem;
       text-decoration: none;
       background: var(--link-bg);
+      backdrop-filter: var(--link-blur);
       padding: 0.8rem 1.2rem;
       border-radius: 14px;
       font-weight: 500;
@@ -97,8 +104,7 @@
     }
 
     .links a:hover {
-      background: var(--fg);
-      color: #fff;
+      background: rgba(40,40,40,0.9);
     }
 
     .links i {
@@ -121,18 +127,24 @@
       font-size: 1.2rem;
       margin-bottom: 1rem;
       text-transform: uppercase;
-      opacity: 0.7;
+      opacity: 0.8;
+      color: var(--fg);
     }
 
-    /* Substack embed tweaks */
+    /* Substack embed tweaks for dark glass */
     #substack-feed-embed .sfw-grid {
       gap: 1rem;
     }
     #substack-feed-embed .sfw-item {
-      background: rgba(255,255,255,0.8) !important;
+      background: rgba(20,20,20,0.8) !important;
       backdrop-filter: blur(8px) !important;
       border-radius: 18px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+      color: var(--fg);
+    }
+    /* ensure links inside embed are visible */
+    #substack-feed-embed .sfw-item a {
+      color: #aad4ff !important;
     }
   </style>
 </head>
@@ -168,7 +180,7 @@
 
     <!-- Writing (Substack embed) -->
     <div class="writing">
-      <h2>Read my Writings on Substack</h2>
+      <h2>Writing</h2>
       <div id="substack-feed-embed"></div>
     </div>
   </div>
