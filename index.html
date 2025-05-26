@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Zawaad Khan" />
   <meta property="og:title" content="Portfolio of Zawaad Khan" />
-  <meta property="og:description" content="Showcasing my projects, skills, and experience." />
+  <meta property="og:description" content="Showcasing my Substack and background." />
   <meta property="og:image" content="path/to/preview-image.jpg" />
   <title>Zawaad Khan – Portfolio</title>
   <style>
@@ -19,7 +19,11 @@
       --max-width: 1000px;
       --gutter: 2rem;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--fg-color);
@@ -29,7 +33,8 @@
     }
     /* Navbar */
     nav {
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: 0; left: 0;
       width: 100%; height: var(--nav-height);
       background: var(--glass-bg);
       backdrop-filter: blur(var(--glass-blur));
@@ -38,68 +43,90 @@
       display: flex; align-items: center; justify-content: center;
     }
     .nav-inner {
+      position: relative;
       width: 100%; max-width: var(--max-width);
       display: flex; align-items: center; justify-content: center;
       padding: 0 1rem;
     }
-    .actions { display: flex; gap: 1.5rem; }
+    .actions {
+      display: flex;
+      gap: 1.5rem;
+      margin-right: 200px; /* reserve space for the CTA */
+    }
     .actions a {
       color: var(--fg-color);
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
     }
-    .actions a:hover { color: var(--accent-color); }
+    .actions a:hover {
+      color: var(--accent-color);
+    }
+    /* “Articles on Substack” CTA pinned top-right */
+    .cta-button {
+      position: absolute;
+      right: 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .cta-button:hover {
+      background: #005bb5;
+    }
 
     /* Intro: About + Substack side by side */
     .intro-section {
       display: flex;
       gap: var(--gutter);
       max-width: var(--max-width);
-      margin: 3rem auto 1rem;
+      margin: 3rem auto;
       padding: 0 1rem;
       align-items: flex-start;
     }
-    /* Make About narrower (1) and Substack wider (2) */
-    .intro-section > #about        { flex: 1; }
+    .intro-section > #about          { flex: 1; }
     .intro-section > #substack-posts { flex: 2; }
 
     /* Substack feed styling */
-    #substack-posts h2 { margin-bottom: 1rem; font-weight: 600; }
-    #posts-container article { margin-bottom: 1.5rem; }
-    #posts-container h3 { margin-bottom: 0.25rem; font-size: 1.1rem; }
-    #posts-container small { color: gray; }
-    #posts-container p { margin-top: 0.5rem; }
-
-    /* General sections & buttons */
-    section {
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1rem;
+    #substack-posts h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
-    h1, h2 { margin-bottom: 1rem; font-weight: 600; }
-    p      { margin-bottom: 1rem; }
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1rem;
-      background: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      border-radius: 6px;
-      transition: background 0.2s;
+    #posts-container article {
+      margin-bottom: 1.5rem;
     }
-    .btn:hover { background: #005bb5; }
+    #posts-container h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+    }
+    #posts-container small {
+      color: gray;
+    }
+    #posts-container p {
+      margin-top: 0.5rem;
+    }
 
-    /* Responsive */
+    /* About heading */
+    #about h1 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Responsive stacking */
     @media (max-width: 800px) {
-      .intro-section { flex-direction: column; }
+      .intro-section {
+        flex-direction: column;
+      }
     }
     @media (max-width: 600px) {
       .actions {
         flex-direction: column;
         align-items: center;
+        margin-right: 0;
       }
     }
   </style>
@@ -114,6 +141,15 @@
         <a href="https://www.instagram.com/zawaad.khan/" aria-label="Instagram">Visual Diary</a>
         <a href="https://www.facebook.com/zawaadkhan6/" aria-label="Facebook">Personal Feed</a>
       </div>
+      <a
+        href="https://zawaadkhan.substack.com/"
+        target="_blank"
+        rel="noopener"
+        class="cta-button"
+        aria-label="Articles on Substack"
+      >
+        Articles on Substack
+      </a>
     </div>
   </nav>
 
@@ -122,7 +158,7 @@
     <section id="about">
       <h1>About Me</h1>
       <p>Hi, I’m Zawaad Khan, a [Your Role] based in [Location]. I specialize in [Your Specialties].</p>
-      <p>Feel free to scroll to see my work or connect via the links above.</p>
+      <p>Feel free to scroll to see my Substack posts or connect via the links above.</p>
     </section>
 
     <section id="substack-posts">
@@ -133,12 +169,10 @@
     </section>
   </div>
 
-  <!-- Projects & Contact follow... -->
-
   <script>
     async function loadSubstackPosts() {
       try {
-        const res   = await fetch('https://your.zawaadkhan.com/feed');
+        const res   = await fetch('https://zawaadkhan.substack.com/feed');
         const text  = await res.text();
         const xml   = new DOMParser().parseFromString(text, 'application/xml');
         const items = xml.querySelectorAll('item');
