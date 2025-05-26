@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Zawaad Khan" />
-  <meta property="og:title" content="Portfolio of Zawaad Khan" />
-  <meta property="og:description" content="Showcasing my Substack and background." />
-  <meta property="og:image" content="path/to/preview-image.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Zawaad Khan">
+  <meta property="og:title" content="Portfolio of Zawaad Khan">
+  <meta property="og:description" content="Showcasing my Substack and background.">
+  <meta property="og:image" content="path/to/preview-image.jpg">
   <title>Zawaad Khan – Portfolio</title>
   <style>
     :root {
@@ -31,6 +31,7 @@
       line-height: 1.6;
       padding-top: var(--nav-height);
     }
+
     /* Navbar */
     nav {
       position: fixed;
@@ -46,6 +47,7 @@
       align-items: center;            /* vertical centering */
       justify-content: space-between; /* socials left, CTA right */
       max-width: var(--max-width);
+      width: 100%;
       margin: 0 auto;
       padding: 0 1rem;
       height: 100%;
@@ -63,7 +65,6 @@
     .actions a:hover {
       color: var(--accent-color);
     }
-    /* “Articles on Substack” CTA */
     .cta-button {
       background: var(--accent-color);
       color: #fff;
@@ -78,7 +79,7 @@
       background: #005bb5;
     }
 
-    /* Intro: About + Substack side by side */
+    /* Intro layout */
     .intro-section {
       display: flex;
       gap: var(--gutter);
@@ -87,8 +88,8 @@
       padding: 0 1rem;
       align-items: flex-start;
     }
-    .intro-section > #about          { flex: 1; }
-    .intro-section > #substack-posts { flex: 2; }
+    .intro-section > #about           { flex: 1; }
+    .intro-section > #substack-posts  { flex: 2; }
 
     /* Substack feed styling */
     #substack-posts h2 {
@@ -115,7 +116,7 @@
       font-weight: 600;
     }
 
-    /* Responsive stacking */
+    /* Responsive */
     @media (max-width: 800px) {
       .intro-section {
         flex-direction: column;
@@ -174,8 +175,7 @@
     async function loadSubstackPosts() {
       try {
         const res   = await fetch('https://zawaadkhan.substack.com/feed');
-        const text  = await res.text();
-        const xml   = new DOMParser().parseFromString(text, 'application/xml');
+        const xml   = new DOMParser().parseFromString(await res.text(), 'application/xml');
         const items = xml.querySelectorAll('item');
         const cont  = document.getElementById('posts-container');
         cont.innerHTML = '';
