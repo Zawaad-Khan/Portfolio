@@ -2,197 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zawaad Khan</title>
-
-  <!-- Font Awesome for Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Zawaad Khan" />
+  <meta property="og:title" content="Portfolio of Zawaad Khan" />
+  <meta property="og:description" content="Showcasing my projects, skills, and experience." />
+  <meta property="og:image" content="path/to/preview-image.jpg" />
+  <title>Zawaad Khan – Portfolio</title>
   <style>
     :root {
-      /* dark stained-glass tints */
-      --card-bg: rgba(20, 20, 20, 0.6);
-      --link-bg: rgba(20, 20, 20, 0.8);
-      --card-blur: blur(12px);
-      --link-blur: blur(8px);
-
-      /* lighter text on dark panels */
-      --fg: #f0f0f0;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-      --radius: 20px;
+      --bg-color: #fff;
+      --fg-color: #1d1d1f;
+      --accent-color: #0071e3;
+      --glass-bg: rgba(255,255,255,0.8);
+      --glass-blur: 10px;
+      --nav-height: 72px;
+      --max-width: 1000px;
     }
-
-    *, *::before, *::after {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: var(--fg);
-      min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
-        center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--fg-color);
+      background: var(--bg-color);
+      line-height: 1.6;
+      padding-top: var(--nav-height);
     }
-
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: var(--card-blur);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: 900px;
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      overflow: hidden;
-    }
-
-    .card-header {
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-    }
-
-    .card-header .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: #555;
-      margin: 0 auto 1.5rem;
-      /* replace with your photo:
-         <img class="avatar" src="your-photo.jpg" alt="Zawaad Khan"> */
-    }
-
-    .card-header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--fg);
-    }
-
-    .card-header p {
-      font-size: 1.1rem;
-      opacity: 0.8;
-      color: var(--fg);
-    }
-
-    /* ─── Connect Buttons (horizontal) ─── */
-    .links {
+      height: var(--nav-height);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      z-index: 1000;
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding: 1rem 2rem 2.5rem;
-    }
-
-    .links a {
-      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+    /* Social links */
+    .actions {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .actions a {
+      color: var(--fg-color);
       text-decoration: none;
-      background: var(--link-bg);
-      backdrop-filter: var(--link-blur);
-      padding: 0.8rem 1.2rem;
-      border-radius: 14px;
       font-weight: 500;
-      color: var(--fg);
-      transition: 0.3s ease;
+      font-size: 0.95rem;
     }
-
-    .links a:hover {
-      background: rgba(40,40,40,0.9);
+    .actions a:hover {
+      color: var(--accent-color);
     }
-
-    .links i {
-      font-size: 1.2rem;
+    /* Sections */
+    section {
+      max-width: var(--max-width);
+      margin: 3rem auto;
+      padding: 0 1rem;
     }
-
-    @media (max-width: 600px) {
-      .links {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-
-    /* ─── Writing Section ─── */
-    .writing {
-      padding: 2rem;
-    }
-
-    .writing h2 {
-      font-size: 1.2rem;
+    h1, h2 {
       margin-bottom: 1rem;
-      text-transform: uppercase;
-      opacity: 0.8;
-      color: var(--fg);
+      font-weight: 600;
     }
-
-    /* Substack embed tweaks for dark glass */
-    #substack-feed-embed .sfw-grid {
-      gap: 1rem;
+    p {
+      margin-bottom: 1rem;
     }
-    #substack-feed-embed .sfw-item {
-      background: rgba(20,20,20,0.8) !important;
-      backdrop-filter: blur(8px) !important;
-      border-radius: 18px !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
-      color: var(--fg);
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: background 0.2s;
     }
-    /* ensure links inside embed are visible */
-    #substack-feed-embed .sfw-item a {
-      color: #aad4ff !important;
+    .btn:hover {
+      background: #005bb5;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <!-- Header -->
-    <div class="card-header">
-      <div class="avatar"></div>
-      <h1>Zawaad Khan</h1>
-      <p>Building intelligent systems for global markets</p>
-    </div>
 
-    <!-- Four horizontal connect buttons -->
-    <div class="links">
-      <a href="https://www.linkedin.com/in/zawaadkhan/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-        Connect on LinkedIn
-      </a>
-      <a href="https://github.com/Zawaad-Khan" target="_blank">
-        <i class="fab fa-github"></i>
-        Code & Data Projects
-      </a>
-      <a href="https://www.instagram.com/yourhandle/" target="_blank">
-        <i class="fab fa-instagram"></i>
-        Visual Diary
-      </a>
-      <a href="https://www.facebook.com/yourprofile" target="_blank">
-        <i class="fab fa-facebook"></i>
-        Personal Feed
-      </a>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/zawaadkhan/" aria-label="LinkedIn">
+          Connect on LinkedIn
+        </a>
+        <a href="https://github.com/Zawaad-Khan" aria-label="GitHub">
+          Code &amp; Data Projects
+        </a>
+        <a href="https://www.instagram.com/zawaad.khan/" aria-label="Instagram">
+          Visual Diary
+        </a>
+        <a href="https://www.facebook.com/zawaadkhan6/" aria-label="Facebook">
+          Personal Feed
+        </a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Writing (Substack embed) -->
-    <div class="writing">
-      <h2>Writing</h2>
-      <div id="substack-feed-embed"></div>
+  <!-- About Section -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>Hi, I’m Zawaad Khan, a [Your Role] based in [Location]. I specialize in [Your Specialties].</p>
+    <p>Feel free to explore my work below or <a href="#contact" class="btn">Get in Touch</a>.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Short description of what this project is and what tech you used.</p>
+        <a href="https://github.com/Zawaad-Khan/project-one" class="btn">View on GitHub</a>
+      </div>
+      <!-- … -->
     </div>
-  </div>
+  </section>
 
-  <!-- Substack Feed Script -->
-  <script>
-    window.SubstackFeedWidget = {
-      substackUrl: "zawaadkhan.substack.com",
-      posts: 4,
-      layout: "grid"
-    };
-  </script>
-  <script src="https://substackapi.com/embeds/feed.js" async></script>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I’m always open to new opportunities and collaborations. Drop me a line:</p>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
 </body>
 </html>
