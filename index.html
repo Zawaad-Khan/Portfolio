@@ -6,132 +6,9 @@
   <meta name="description" content="Portfolio of Zawaad Khan">
   <meta property="og:title" content="Portfolio of Zawaad Khan">
   <meta property="og:description" content="Showcasing my Substack and background.">
-  <meta property="og:image" content="path/to/preview-image.jpg">
+  <meta property="og:image" content="assets/images/preview.jpg">
   <title>Zawaad Khan – Portfolio</title>
-  <style>
-    :root {
-      --bg-color: #fff;
-      --fg-color: #1d1d1f;
-      --accent-color: #7b1113;       /* updated accent */
-      --glass-bg: rgba(255,255,255,0.8);
-      --glass-blur: 10px;
-      --nav-height: 72px;
-      --max-width: 1000px;
-      --gutter: 2rem;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--fg-color);
-      background: var(--bg-color);
-      line-height: 1.6;
-      padding-top: var(--nav-height);
-    }
-
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: var(--nav-height);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;            
-      justify-content: space-between; 
-      max-width: var(--max-width);
-      width: 100%;
-      margin: 0 auto;
-      padding: 0 1rem;
-      height: 100%;
-    }
-    .actions {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .actions a {
-      color: var(--fg-color);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .actions a:hover {
-      color: var(--accent-color);
-    }
-    .cta-button {
-      background: var(--accent-color);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 9999px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .cta-button:hover {
-      background: #5e0d0f; /* slightly darker hover */
-    }
-
-    /* Intro layout */
-    .intro-section {
-      display: flex;
-      gap: var(--gutter);
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1rem;
-      align-items: flex-start;
-    }
-    .intro-section > #about           { flex: 1; }
-    .intro-section > #substack-posts  { flex: 2; }
-
-    /* Substack feed styling */
-    #substack-posts h2 {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    #posts-container article {
-      margin-bottom: 1.5rem;
-    }
-    #posts-container h3 {
-      margin-bottom: 0.25rem;
-      font-size: 1.1rem;
-    }
-    #posts-container small {
-      color: gray;
-    }
-    #posts-container p {
-      margin-top: 0.5rem;
-    }
-
-    /* About heading */
-    #about h1 {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 800px) {
-      .intro-section {
-        flex-direction: column;
-      }
-    }
-    @media (max-width: 600px) {
-      .actions {
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav-inner {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -139,7 +16,7 @@
     <div class="nav-inner">
       <div class="actions">
         <a href="https://www.linkedin.com/in/zawaadkhan/" aria-label="LinkedIn">Connect on LinkedIn</a>
-        <a href="https://github.com/Zawaad-Khan" aria-label="GitHub">Code &amp; Data Projects</a>
+        <a href="https://github.com/Zawaad-Khan" aria-label="GitHub">Code & Data Projects</a>
         <a href="https://www.instagram.com/zawaad.khan/" aria-label="Instagram">Visual Diary</a>
         <a href="https://www.facebook.com/zawaadkhan6/" aria-label="Facebook">Personal Feed</a>
       </div>
@@ -171,34 +48,6 @@
     </section>
   </div>
 
-  <script>
-    async function loadSubstackPosts() {
-      try {
-        const res   = await fetch('https://zawaadkhan.substack.com/feed');
-        const xml   = new DOMParser().parseFromString(await res.text(), 'application/xml');
-        const items = xml.querySelectorAll('item');
-        const cont  = document.getElementById('posts-container');
-        cont.innerHTML = '';
-        Array.from(items).slice(0, 5).forEach(item => {
-          const title = item.querySelector('title')?.textContent || 'Untitled';
-          const link  = item.querySelector('link')?.textContent  || '#';
-          const date  = new Date(item.querySelector('pubDate')?.textContent).toLocaleDateString();
-          const desc  = item.querySelector('description')?.textContent || '';
-          const art   = document.createElement('article');
-          art.innerHTML = `
-            <h3><a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
-            <small>${date}</small>
-            <p>${desc}</p>
-          `;
-          cont.appendChild(art);
-        });
-      } catch (e) {
-        console.error(e);
-        document.getElementById('posts-container').textContent = 'Failed to load posts.';
-      }
-    }
-    document.addEventListener('DOMContentLoaded', loadSubstackPosts);
-  </script>
-
+  <script src="js/main.js" defer></script>
 </body>
 </html>
