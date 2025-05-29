@@ -152,12 +152,22 @@ nav {
 .footer-section a:hover {
   color: var(--accent-color);
 }
-.footer-social {
-  list-style: none;
+
+/* Social links - FIXED BULLETS */
+.footer-social,
+.footer-social li {
+  list-style: none !important;
+  margin: 0;
   padding: 0;
 }
-.footer-social li + li {
-  margin-top: 0.25rem;
+.footer-social li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.footer-social i {
+  margin-right: 8px;
+  font-size: 1rem;
 }
 
 /* Responsive */
