@@ -1,8 +1,13 @@
-// fetch & render Substack posts, then handle footer reveal
+// ========================
+// main.js – Zawaad's Site
+// ========================
+
+// Substack fetch function — preserved for future use (currently disabled)
 async function loadSubstackPosts() {
   const container = document.getElementById('posts-container');
   container.innerHTML = '<p>Loading posts…</p>';
   try {
+    // This endpoint no longer works — API is deprecated or private
     const res = await fetch('https://zawaadkhan.substack.com/api/v1/latest-posts?limit=5');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const { posts } = await res.json();
@@ -34,9 +39,13 @@ async function loadSubstackPosts() {
   }
 }
 
+// DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-  loadSubstackPosts();
+  // Substack is now handled by widget embed in index.html
+  // Commented out to prevent error from broken API
+  // loadSubstackPosts();
 
+  // Reveal footer on scroll
   const footer = document.querySelector('.site-footer');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
