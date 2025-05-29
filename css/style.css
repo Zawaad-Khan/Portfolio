@@ -7,7 +7,7 @@
   --nav-height: 72px;
   --max-width: 1000px;
   --gutter: 2rem;
-  --footer-height: 200px; /* adjust this to match your footer’s actual height */
+  --footer-height: 200px; /* adjust if your footer content is taller/shorter */
 }
 
 /* Reset & Base */
@@ -27,11 +27,11 @@ body {
   background: var(--bg-color);
   line-height: 1.6;
 
-  /* Leave room for fixed navbar and footer */
+  /* room for fixed navbar + footer */
   padding-top: var(--nav-height);
   padding-bottom: var(--footer-height);
 
-  /* Ensure full viewport + footer space so scrolling is possible */
+  /* ensure content + padding overflows viewport */
   min-height: calc(100vh + var(--footer-height));
 }
 
@@ -39,8 +39,7 @@ body {
 nav {
   position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: var(--nav-height);
+  width: 100%; height: var(--nav-height);
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -50,15 +49,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: var(--max-width);
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
+  width: 100%; max-width: var(--max-width);
+  height: 100%; margin: 0 auto; padding: 0 1rem;
 }
 .actions {
-  display: flex;
-  gap: 1.5rem;
+  display: flex; gap: 1.5rem;
 }
 .actions a {
   color: var(--fg-color);
@@ -83,7 +78,7 @@ nav {
   background: #5e0d0f;
 }
 
-/* Intro + Feed Layout */
+/* Intro & Feed */
 .intro-section {
   display: flex;
   gap: var(--gutter);
@@ -124,8 +119,7 @@ nav {
 .site-footer {
   position: fixed;
   bottom: 0; left: 0;
-  width: 100%;
-  height: var(--footer-height);
+  width: 100%; height: var(--footer-height);
   background: #1d1d1f;
   color: #eee;
   transform: translateY(100%);
@@ -136,12 +130,9 @@ nav {
   transform: translateY(0);
 }
 .footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
+  display: flex; flex-wrap: wrap; gap: var(--gutter);
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  margin: 0 auto; padding: 2rem 1rem;
 }
 .footer-section {
   flex: 1;
