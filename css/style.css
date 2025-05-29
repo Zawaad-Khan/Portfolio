@@ -7,7 +7,10 @@
   --nav-height: 72px;
   --max-width: 1000px;
   --gutter: 2rem;
+  --footer-height: 200px; /* adjust this to match your footer’s actual height */
 }
+
+/* Reset & Base */
 *,
 *::before,
 *::after {
@@ -15,19 +18,27 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--fg-color);
   background: var(--bg-color);
   line-height: 1.6;
+
+  /* Leave room for fixed navbar and footer */
   padding-top: var(--nav-height);
+  padding-bottom: var(--footer-height);
+
+  /* Ensure full viewport + footer space so scrolling is possible */
+  min-height: calc(100vh + var(--footer-height));
 }
 
 /* Navbar */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: var(--nav-height);
   background: var(--glass-bg);
@@ -39,11 +50,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--max-width);
   width: 100%;
+  max-width: var(--max-width);
+  height: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  height: 100%;
 }
 .actions {
   display: flex;
@@ -66,13 +77,13 @@ nav {
   font-weight: 500;
   border-radius: 9999px;
   text-decoration: none;
-  white-space: nowrap;
+  transition: background 0.2s;
 }
 .cta-button:hover {
   background: #5e0d0f;
 }
 
-/* Intro layout */
+/* Intro + Feed Layout */
 .intro-section {
   display: flex;
   gap: var(--gutter);
@@ -87,8 +98,6 @@ nav {
 .intro-section > #substack-posts {
   flex: 2;
 }
-
-/* Substack feed styling */
 #substack-posts h2 {
   margin-bottom: 1rem;
   font-weight: 600;
@@ -106,11 +115,58 @@ nav {
 #posts-container p {
   margin-top: 0.5rem;
 }
-
-/* About heading */
 #about h1 {
   margin-bottom: 1rem;
   font-weight: 600;
+}
+
+/* Footer (fixed, hidden until scroll) */
+.site-footer {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: var(--footer-height);
+  background: #1d1d1f;
+  color: #eee;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 500;
+}
+.site-footer.visible {
+  transform: translateY(0);
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-section h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.footer-section p,
+.footer-section a {
+  margin-bottom: 0.25rem;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-section a:hover {
+  color: var(--accent-color);
+}
+.footer-social {
+  list-style: none;
+  padding: 0;
+}
+.footer-social li + li {
+  margin-top: 0.25rem;
 }
 
 /* Responsive */
@@ -126,5 +182,12 @@ nav {
   }
   .nav-inner {
     justify-content: center;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    text-align: center;
   }
 }
