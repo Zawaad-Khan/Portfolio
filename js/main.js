@@ -44,14 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Substack is now handled by widget embed in index.html
   // Commented out to prevent error from broken API
   // loadSubstackPosts();
-
-  // Reveal footer on scroll
-  const footer = document.querySelector('.site-footer');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-      footer.classList.add('visible');
-    } else {
-      footer.classList.remove('visible');
-    }
-  });
-});

@@ -29,7 +29,8 @@ body {
 
   /* room for fixed navbar + footer */
   padding-top: var(--nav-height);
-  padding-bottom: var(--footer-height);
+  padding-bottom: 0;
+
 
   /* ensure content + padding overflows viewport */
   min-height: calc(100vh + var(--footer-height));
@@ -117,17 +118,11 @@ nav {
 
 /* Footer (fixed, hidden until scroll) */
 .site-footer {
-  position: fixed;
-  bottom: 0; left: 0;
-  width: 100%; height: var(--footer-height);
+  position: static;
+  width: 100%;
   background: #1d1d1f;
   color: #eee;
-  transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 500;
-}
-.site-footer.visible {
-  transform: translateY(0);
+  padding: 2rem 1rem;
 }
 .footer-inner {
   display: flex; flex-wrap: wrap; gap: var(--gutter);
