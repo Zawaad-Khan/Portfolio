@@ -201,3 +201,18 @@ nav {
     font-size: 0.9rem;
   }
 }
+.quote {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-style: normal;
+  background-color: #e8d8d8;
+  color: #7b1113;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
