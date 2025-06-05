@@ -116,12 +116,12 @@ nav {
   font-weight: 600;
 }
 
-/* Footer (fixed, hidden until scroll) */
+/* Footer */
 .site-footer {
   position: static;
   width: 100%;
-  background: #1d1d1f;
-  color: #eee;
+  background: #000;
+  color: #fff;
   padding: 2rem 1rem;
 }
 .footer-inner {
@@ -140,7 +140,7 @@ nav {
 .footer-section p,
 .footer-section a {
   margin-bottom: 0.25rem;
-  color: #ccc;
+  color: #ddd;
   text-decoration: none;
   font-size: 0.95rem;
 }
