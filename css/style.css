@@ -98,17 +98,17 @@ nav {
   margin-bottom: 1rem;
   font-weight: 600;
 }
-#posts-container article {
+#substack-posts article {
   margin-bottom: 1.5rem;
 }
-#posts-container h3 {
+#substack-posts h3 {
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
-#posts-container small {
+#substack-posts small {
   color: gray;
 }
-#posts-container p {
+#substack-posts p {
   margin-top: 0.5rem;
 }
 #about h1 {
