@@ -27,12 +27,9 @@ body {
   background: var(--bg-color);
   line-height: 1.6;
 
-  /* room for fixed navbar + footer */
   padding-top: var(--nav-height);
   padding-bottom: 0;
 
-
-  /* ensure content + padding overflows viewport */
   min-height: calc(100vh + var(--footer-height));
 }
 
@@ -115,6 +112,11 @@ nav {
   margin-bottom: 1rem;
   font-weight: 600;
 }
+.research-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
 
 /* Footer */
 .site-footer {
@@ -171,14 +173,12 @@ nav {
 }
 
 @media (max-width: 1024px) {
-  /* Laptops */
   .intro-section {
     flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  /* Tablets */
   .actions {
     flex-direction: column;
     align-items: center;
@@ -196,13 +196,13 @@ nav {
 }
 
 @media (max-width: 480px) {
-  /* Phones */
   body {
     font-size: 0.9rem;
   }
 }
+
+/* Quote */
 .quote {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.2rem;
   line-height: 1.2;
   font-style: normal;
