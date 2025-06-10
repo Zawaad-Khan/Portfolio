@@ -228,7 +228,7 @@ nav {
 .minimal-footer {
   background: #111111;
   color: #ffffff;
-  padding: 4rem 1rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
 }
 
@@ -281,4 +281,20 @@ nav {
 
 .footer-column i {
   font-size: 1rem;
+}
+.footer-social-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.footer-social-row a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.footer-social-row a:hover {
+  color: var(--accent-color);
 }
