@@ -282,11 +282,23 @@ nav {
 .footer-column i {
   font-size: 1rem;
 }
+.footer-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-legal {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
 .footer-social-row {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
+  gap: 1.5rem;
 }
 
 .footer-social-row a {
