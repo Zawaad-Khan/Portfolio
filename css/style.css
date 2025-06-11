@@ -7,7 +7,7 @@
   --nav-height: 3.5rem;
   --max-width: 62.5rem;
   --gutter: 2rem;
-  --footer-height: 12.5rem; /* adjust if your footer content is taller/shorter */
+  --footer-height: 12.5rem;
 }
 
 /* Reset & Base */
@@ -26,23 +26,19 @@ body {
   color: var(--fg-color);
   background: var(--bg-color);
   line-height: 1.6;
-
   padding-top: var(--nav-height);
   padding-bottom: 0;
-
   min-height: calc(100vh + var(--footer-height));
 }
 
 /* Navbar */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--nav-height);
+  top: 0; left: 0;
+  width: 100%; height: var(--nav-height);
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   z-index: 1000;
 }
 .nav-inner {
@@ -93,6 +89,35 @@ nav {
 .intro-section > #substack-posts {
   flex: 2;
 }
+
+/* Section Titles & Entry Styles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-item {
+  margin-bottom: 1.5rem;
+}
+
+.entry-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.entry-desc {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Substack */
 #substack-posts h2 {
   margin-bottom: 1rem;
   font-weight: 600;
@@ -187,7 +212,6 @@ nav {
   }
 }
 
-
 @media (max-width: 768px) {
   .actions {
     flex-direction: column;
@@ -226,14 +250,14 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+
 /* Minimal Footer */
 .minimal-footer {
-  background: #000000;
+  background: #111111;
   color: #ffffff;
   padding: 1rem 1rem;
   text-align: center;
 }
-
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -244,11 +268,9 @@ nav {
   margin: 0 auto;
   text-align: left;
 }
-
 .footer-column {
   min-width: 150px;
 }
-
 .footer-column h4 {
   font-size: 1rem;
   margin-bottom: 0.75rem;
@@ -256,17 +278,14 @@ nav {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-
 .footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-column li {
   margin-bottom: 0.5rem;
 }
-
 .footer-column a {
   color: #ccc;
   text-decoration: none;
@@ -276,11 +295,9 @@ nav {
   gap: 0.5rem;
   transition: color 0.2s ease-in-out;
 }
-
 .footer-column a:hover {
   color: var(--accent-color);
 }
-
 .footer-column i {
   font-size: 1rem;
 }
@@ -292,23 +309,19 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
 }
-
 .footer-legal {
   color: #aaa;
   font-size: 0.85rem;
 }
-
 .footer-social-row {
   display: flex;
   gap: 1.5rem;
 }
-
 .footer-social-row a {
   color: #fff;
   font-size: 1.5rem;
   transition: color 0.2s;
 }
-
 .footer-social-row a:hover {
   color: var(--accent-color);
 }
