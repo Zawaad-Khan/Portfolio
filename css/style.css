@@ -1,8 +1,8 @@
 :root {
-  --bg-color: #fff;
+  --bg-color: #FBFBFD;
   --fg-color: #000000;
   --accent-color: #7b1113;
-  --glass-bg: rgba(255,255,255,0.8);
+  --glass-bg: rgba(251, 251, 253, 0.8);
   --glass-blur: 10px;
   --nav-height: 3.5rem;
   --max-width: 62.5rem;
@@ -89,35 +89,6 @@ nav {
 .intro-section > #substack-posts {
   flex: 2;
 }
-
-/* Section Titles & Entry Styles */
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-.entry-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.entry-item {
-  margin-bottom: 1.5rem;
-}
-
-.entry-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.entry-desc {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Substack */
 #substack-posts h2 {
   margin-bottom: 1rem;
   font-weight: 600;
@@ -198,7 +169,6 @@ nav {
 @media (max-width: 1280px) {
   /* Large screens */
 }
-
 @media (max-width: 1024px) {
   .intro-section {
     flex-direction: column;
@@ -211,7 +181,6 @@ nav {
     max-width: 700px;
   }
 }
-
 @media (max-width: 768px) {
   .actions {
     flex-direction: column;
@@ -228,7 +197,6 @@ nav {
     text-align: center;
   }
 }
-
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
