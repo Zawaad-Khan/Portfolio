@@ -1,8 +1,8 @@
 :root {
-  --bg-color: #FBFBFD;
+  --bg-color: #ffffff;
   --fg-color: #000000;
   --accent-color: #7b1113;
-  --glass-bg: rgba(251, 251, 253, 0.8);
+  --glass-bg: #ffffffcc;
   --glass-blur: 10px;
   --nav-height: 3.5rem;
   --max-width: 62.5rem;
@@ -293,22 +293,29 @@ nav {
 .footer-social-row a:hover {
   color: var(--accent-color);
 }
-#upcoming-books-bar {
+#books-bar {
   width: 100%;
-  background: #e8d8d8;
+  background: #f5f5f7;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 2rem 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+.books-bar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg-color);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
 }
 
-.upcoming-books-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+.books-inner {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
-.upcoming-books-inner img {
+.books-inner img {
   width: 160px;
   height: auto;
   border-radius: 0.25rem;
