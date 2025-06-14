@@ -54,8 +54,9 @@ nav {
 .actions a {
   color: var(--fg-color);
   text-decoration: none;
-  font-weight: 400;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.02em;     /* Even spacing for polish */
 }
 .actions a:hover {
   color: var(--accent-color);
