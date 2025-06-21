@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Zawaad Khan">
-  <meta property="og:title" content="Portfolio of Zawaad Khan">
-  <meta property="og:description" content="Showcasing my Substack and background.">
-  <meta property="og:image" content="assets/images/preview.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Zawaad Khan" />
+  <meta property="og:title" content="Portfolio of Zawaad Khan" />
+  <meta property="og:description" content="Showcasing my Substack and background." />
+  <meta property="og:image" content="assets/images/preview.jpg" />
   <title>Zawaad Khan</title>
-  <link rel="icon" href="favicon.ico?v=2">
-  <link rel="preconnect" href="https://zawaadkhan.substack.com">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico?v=2" />
+  <link rel="preconnect" href="https://zawaadkhan.substack.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <div class="actions">
-        <a href="index.html" aria-label="Overview">Overview</a>
-        <a href="research.html" aria-label="Research">Research</a>
-        <a href="books.html" aria-label="Books">Books</a>
-      </div>
-      <a href="https://zawaadkhan.substack.com/" class="cta-button" aria-label="Essays on Substack" target="_blank" rel="noopener">Substack Essays</a>
+  <!-- SCROLLABLE TOP: Name on left, Essays button on right -->
+  <div class="brand-header">
+    <div class="brand-container">
+      <h1 class="brand-name">Zawaad Khan</h1>
+      <a href="https://zawaadkhan.substack.com/" class="cta-button" target="_blank" rel="noopener">Substack Essays</a>
     </div>
-  </nav>
-  
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <div class="sticky-nav">
+    <div class="sticky-nav-inner">
+      <a href="index.html">Overview</a>
+      <a href="research.html">Research</a>
+      <a href="books.html">Books</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
   <main class="intro-section">
     <section id="about">
       <p class="quote">God intended us to be free.<br><small>— Ronald Reagan</small></p>
@@ -34,19 +40,29 @@
 
     <section id="substack-posts">
       <h2 class="section-title">Featured Essays</h2>
-      <div class="substack-post-embed"><p lang="en">Vietnam: Asia’s True Successor to China by Zawaad Khan</p><p>While its neighbors fall into division over religion, culture, and political infighting, Vietnam’s unity and reforms quietly position it to take over as Asia’s manufacturing leader.</p><a data-post-link href="https://zawaadkhan.substack.com/p/vietnam-asias-true-successor-to-china">Read on Substack</a></div><script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
-      <div class="substack-post-embed"><p lang="en">Will America Elect Another Carter? by Zawaad Khan</p><p>History may or may not repeat, but it just might elect another Carter</p><a data-post-link href="https://zawaadkhan.substack.com/p/will-america-elect-another-carter">Read on Substack</a></div><script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script><div id="posts-container"></div>
+
+      <!-- Substack Embeds (Unchanged) -->
+      <div class="substack-post-embed">
+        <p lang="en">Will America Elect Another Carter? by Zawaad Khan</p>
+        <p>History may or may not repeat, but it just might elect another Carter</p>
+        <a data-post-link href="https://zawaadkhan.substack.com/p/will-america-elect-another-carter">Read on Substack</a>
+      </div>
+      <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
+
+      <div id="posts-container"></div>
     </section>
   </main>
+
+  <!-- BOOKS SECTION -->
   <section id="books-bar">
     <h2 class="books-bar-title">Books</h2>
-  <div class="books-inner">
+    <div class="books-inner">
       <img src="Assets/Digital Monetarism.png" alt="Digital Monetarism Book Cover" />
       <img src="Assets/Principles of Presence.png" alt="Principles of Presence Book Cover" />
       <img src="Assets/Letters to Strangers I’ve Never Met.png" alt="Letters to Strangers I’ve Never Met Book Cover" />
     </div>
   </section>
-  
+
   <!-- FOOTER -->
   <footer class="minimal-footer">
     <div class="footer-inner footer-split">
