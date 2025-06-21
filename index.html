@@ -15,20 +15,17 @@
 </head>
 <body>
 
-  <!-- SCROLLABLE TOP: Name on left, Essays button on right -->
-  <div class="brand-header">
-    <div class="brand-container">
-      <h1 class="brand-name">Zawaad Khan</h1>
-      <a href="https://zawaadkhan.substack.com/" class="cta-button" target="_blank" rel="noopener">Substack Essays</a>
-    </div>
-  </div>
-
   <!-- STICKY NAVBAR -->
   <div class="sticky-nav">
     <div class="sticky-nav-inner">
-      <a href="index.html">Overview</a>
-      <a href="research.html">Research</a>
-      <a href="books.html">Books</a>
+      <div class="nav-wrapper">
+        <div class="nav-links">
+          <a href="index.html">Overview</a>
+          <a href="research.html">Research</a>
+          <a href="books.html">Books</a>
+        </div>
+      </div>
+      <a href="https://zawaadkhan.substack.com/" class="cta-button" target="_blank" rel="noopener">Substack Essays</a>
     </div>
   </div>
 
@@ -41,7 +38,20 @@
     <section id="substack-posts">
       <h2 class="section-title">Featured Essays</h2>
 
-      <!-- Substack Embeds (Unchanged) -->
+      <div class="substack-post-embed">
+        <p lang="en">Trouble in Brussels by Zawaad Khan</p>
+        <p>The Euro, Decline, and Disillusion</p>
+        <a data-post-link href="https://zawaadkhan.substack.com/p/trouble-in-brussels">Read on Substack</a>
+      </div>
+      <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
+
+      <div class="substack-post-embed">
+        <p lang="en">Vietnam: Asia’s True Successor to China by Zawaad Khan</p>
+        <p>While its neighbors fall into division over religion, culture, and political infighting, Vietnam’s unity and reforms quietly position it to take over as Asia’s manufacturing leader.</p>
+        <a data-post-link href="https://zawaadkhan.substack.com/p/vietnam-asias-true-successor-to-china">Read on Substack</a>
+      </div>
+      <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
+
       <div class="substack-post-embed">
         <p lang="en">Will America Elect Another Carter? by Zawaad Khan</p>
         <p>History may or may not repeat, but it just might elect another Carter</p>
@@ -53,7 +63,7 @@
     </section>
   </main>
 
-  <!-- BOOKS SECTION -->
+  <!-- BOOKS PREVIEW BAR -->
   <section id="books-bar">
     <h2 class="books-bar-title">Books</h2>
     <div class="books-inner">
